@@ -1,19 +1,9 @@
 const fs = require("fs");
 
-
 let word;
-
-// if(process.argv.length != 3){
-//     console.log("Usage: node <script-file> <word>")
-//     process.exit(1);
-// }
-// else {
-//     word = process.argv[2]
-// }
 
 module.exports = {
     anagramFinder: function(word){
-        // process.stdin.resume();
         var anagramsFound = [];
         var time = '';
         fs.readFile('dictionary.txt', 'utf8', (err,data) => {
