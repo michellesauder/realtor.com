@@ -44,7 +44,13 @@ Simply type in exit
 # tests
 
 If you would like to test out the application, simply ensure jest is installed
+
+```bash
+npm install --save-dev jest
+```
+
 comment out readFile(); in the index.js file
+
 then run the command: 
 ```bash
 npm run test
