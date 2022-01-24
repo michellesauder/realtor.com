@@ -1,34 +1,51 @@
 # Anagram Finder
 
-The Anagram Finder is a Python library for dealing with word pluralization.
+The program should provide a command line prompt where a user can input a word of their choice. On hitting enter the program should find all anagrams, if any exist, of the word and print them out on the next line as a comma separated list. If no anagrams are found it should print out “No anagrams found for <word>”.
+
+The program should continue to prompt for anagrams until “exit” is typed at the prompt.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+You need to install 
+
+Node.js
+npm
+jest
+
+After successful installation of Node.js be sure that node is added to your path. To check the successful installation of node.js type to your OS's commandline interface the following:
 
 ```bash
-pip install foobar
+node -v
+```
+```bash
+node -v
 ```
 
+Then:
+```bash
+npm install
+```
 ## Usage
 
-```python
-import foobar
+To start the Anagram Finder, type in command into your terminal on VSCode: 
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+```bash
+node index
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+The program should load the dictionary.txt file and let you know how long it took in the pink box.
+# A prompt will tell you to enter a word
 
-Please make sure to update tests as appropriate.
+Enter your word to find all anagrams: <word>
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+# to exit
+Simply type in exit
+
+# tests
+
+If you would like to test out the application, simply ensure jest is installed
+comment out readFile(); in the index.js file
+then run the command: 
+```bash
+npm run test
+```
