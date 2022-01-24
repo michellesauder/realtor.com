@@ -83,4 +83,4 @@ var readFile = getAnagrams.prototype.readFile = function () {
 }
 
 module.exports = getAnagrams;
-// readFile();
+readFile();
