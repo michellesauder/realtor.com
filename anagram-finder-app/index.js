@@ -19,20 +19,22 @@ var findAnagrams = getAnagrams.prototype.findAnagrams = function (searchWord) {
     let sanitizedWord = sanitizeWord(searchWord);
     if (anagrams[sanitizedWord]) {
         return anagrams[sanitizedWord];
-    } 
-    // else {
-    //     return `No anagrams found for ${searchWord}`;
-    // }
+    } else {
+        return false
+    }
 }
 
 //read dictionary file and sets up CLI prompt
 var readFile = getAnagrams.prototype.readFile = function () {
-    console.log('Welcome to the Anagram Finder');
+    console.log('--------------------------------');
+    console.log('\x1b[36m%s\x1b[0m', 'Welcome to the Anagram Finder');
+    console.log('--------------------------------');
+
     fs.readFile('dictionary.txt', 'utf8', (err, data) => {
         console.time('time');
         if (err) {
             console.log("Unable to read the dictionary, please try again.")
-            console.log(err)
+            console.error(err)
             return;
         }
         var dictionary = data.split('\n');
@@ -47,24 +49,33 @@ var readFile = getAnagrams.prototype.readFile = function () {
                 anagrams[sanitizedWord] = [word];
             }
          });
-        console.log('dictionary loaded in ') + console.timeEnd('time');
+
+        console.log('\x1b[45m')
+        console.log('--------------------------------');
+        console.log('dictionary loaded in ') + console.timeEnd('time') ;
+        console.log('--------------------------------', '\x1b[0m');
+
         var rl = readline.createInterface(process.stdin, process.stdout);
+
+        console.log("\x1b[32m")
         rl.setPrompt('Enter your word to find all anagrams: ');
         rl.prompt();
         rl.on('line', (word) => {
             if(word !== 'exit'){
-                console.time('');
+                console.time('timer');
                 if(findAnagrams(word)){
                     var wordsFound = findAnagrams(word).join(", ");
                     console.log(findAnagrams(word).length + ` Anagrams found for ${word} in `);
-                    console.timeEnd('');
+                    console.timeEnd('timer');
                     console.log(wordsFound);
                 }else{
-                    console.log(`No Anagrams found for ${word}`);
+                    console.log('\x1b[33m%s\x1b[0m', `No Anagrams found for ${searchWord}`);
                 }
+                console.log("\x1b[32m")
                 rl.prompt();
             }else{
-                console.log("Closed the interatcion session")
+                console.log("\x1b[4m")
+                console.log("Exited the Anagram Finder")
                 rl.close();
             }
         });
@@ -72,4 +83,4 @@ var readFile = getAnagrams.prototype.readFile = function () {
 }
 
 module.exports = getAnagrams;
-readFile();
+// readFile();
