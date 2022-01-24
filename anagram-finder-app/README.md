@@ -1,6 +1,6 @@
 # Anagram Finder
 
-The program should provide a command line prompt where a user can input a word of their choice. On hitting enter the program should find all anagrams, if any exist, of the word and print them out on the next line as a comma separated list. If no anagrams are found it should print out “No anagrams found for <word>”.
+The program should provide a command line prompt where a user can input a word of their choice. On hitting enter the program should find all anagrams, if any exist, of the word and print them out on the next line as a comma separated list. If no anagrams are found it should print out “No anagrams found for 'fjdksahfdjskl'”.
 
 The program should continue to prompt for anagrams until “exit” is typed at the prompt.
 
@@ -8,8 +8,8 @@ The program should continue to prompt for anagrams until “exit” is typed at 
 
 You need to install 
 
-Node.js
-npm
+Node.js,
+npm,
 jest
 
 After successful installation of Node.js be sure that node is added to your path. To check the successful installation of node.js type to your OS's commandline interface the following:
@@ -18,7 +18,7 @@ After successful installation of Node.js be sure that node is added to your path
 node -v
 ```
 ```bash
-node -v
+npm -v
 ```
 
 Then:
@@ -36,7 +36,7 @@ node index
 The program should load the dictionary.txt file and let you know how long it took in the pink box.
 # A prompt will tell you to enter a word
 
-Enter your word to find all anagrams: <word>
+Enter your word to find all anagrams: 'word'
 
 # to exit
 Simply type in exit
