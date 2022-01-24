@@ -19,9 +19,10 @@ var findAnagrams = getAnagrams.prototype.findAnagrams = function (searchWord) {
     let sanitizedWord = sanitizeWord(searchWord);
     if (anagrams[sanitizedWord]) {
         return anagrams[sanitizedWord];
-    } else {
-        return `No anagrams found for ${searchWord}`;
-    }
+    } 
+    // else {
+    //     return `No anagrams found for ${searchWord}`;
+    // }
 }
 
 //read dictionary file and sets up CLI prompt
@@ -46,7 +47,6 @@ var readFile = getAnagrams.prototype.readFile = function () {
                 anagrams[sanitizedWord] = [word];
             }
          });
-         
         console.log('dictionary loaded in ') + console.timeEnd('time');
         var rl = readline.createInterface(process.stdin, process.stdout);
         rl.setPrompt('Enter your word to find all anagrams: ');
@@ -54,9 +54,14 @@ var readFile = getAnagrams.prototype.readFile = function () {
         rl.on('line', (word) => {
             if(word !== 'exit'){
                 console.time('');
-                console.log(findAnagrams(word));
-                console.log(findAnagrams(word).length + ` Anagrams found for ${word} in `);
-                console.timeEnd('');
+                if(findAnagrams(word)){
+                    var wordsFound = findAnagrams(word).join(", ");
+                    console.log(findAnagrams(word).length + ` Anagrams found for ${word} in `);
+                    console.timeEnd('');
+                    console.log(wordsFound);
+                }else{
+                    console.log(`No Anagrams found for ${word}`);
+                }
                 rl.prompt();
             }else{
                 console.log("Closed the interatcion session")

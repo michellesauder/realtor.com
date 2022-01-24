@@ -4,7 +4,7 @@
   "description": "Submit an word into the anagram finder and it will return a list of anagrams associated with that word.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
