@@ -1,6 +1,6 @@
 # Anagram Finder
 
-The program should provide a command line prompt where a user can input a word of their choice. On hitting enter the program should find all anagrams, if any exist, of the word and print them out on the next line as a comma separated list. If no anagrams are found it should print out “No anagrams found for 'fjdksahfdjskl'”.
+The program should provide a command line prompt where a user can input a word of their choice. On hitting enter the program should find all anagrams, if any exist, of the word and print them out on the next line as a comma separated list. If no anagrams are found it should print out “No anagrams found for 'word'”.
 
 The program should continue to prompt for anagrams until “exit” is typed at the prompt.
 

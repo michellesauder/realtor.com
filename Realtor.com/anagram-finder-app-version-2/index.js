@@ -16,12 +16,14 @@ var sanitizeWord = getAnagrams.prototype.sanitizeWord = function (word) {
 
 //finds all possible anagrams
 var findAnagrams = getAnagrams.prototype.findAnagrams = function (searchWord) {
-    let sanitizedWord = sanitizeWord(searchWord);
-    if (anagrams[sanitizedWord]) {
-        return anagrams[sanitizedWord];
-    } else {
-        return false
-    }
+    if(searchWord != ''){
+        let sanitizedWord = sanitizeWord(searchWord);
+        if (anagrams[sanitizedWord]) {
+            return anagrams[sanitizedWord];
+        } else {
+            return false
+        }
+    } return false
 }
 
 //read dictionary file and sets up CLI prompt
