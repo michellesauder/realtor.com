@@ -4,7 +4,6 @@ var readline = require('readline');
 //Full list of Anagrams found
 var anagrams = {};
 
-//Set List of Anagrams into obj
 function getAnagrams(listOfAnagrams) {
     anagrams = listOfAnagrams
 }
